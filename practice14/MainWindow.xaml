@@ -15,6 +15,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -24,172 +25,176 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+
         <TextBox 
-                Grid.Column="0"
-                Grid.Row="0"
-                Grid.ColumnSpan="4"
-                FontSize="20"
-                FontWeight="Bold"
-                Background="LightPink"
-                Foreground="AntiqueWhite"
-            Name="SentenceTb"
-            />
-        <TextBlock
-            Grid.Column="0"
-            Grid.Row="6"
-            Grid.ColumnSpan="4"
-            Background="DeepPink"
-            Name="SentenceTbl"
-            Foreground="AntiqueWhite" 
-            Text="Результат"
-            FontSize="24"
-            VerticalAlignment="Center" 
-            HorizontalAlignment="Center"
-            Height="62"
-            Width="533"
-            />
-        <Button
-           Grid.Column="0"
-            Grid.Row="1" 
-            Content="0"
-            FontSize="24"
-            Background="HotPink"
-            Foreground="AntiqueWhite"
-            Click="Button_Click_1"
-          />
-        <Button
-        Grid.Column="1"
-        Grid.Row="1" 
-        Content="1"
+        Grid.Column="0"
+        Grid.Row="0"
+        Grid.ColumnSpan="4"
+        FontSize="20"
+        FontWeight="Bold"
+        Background="LightPink"
+        Foreground="AntiqueWhite"
+        Name="SentenceTb"/>
+
+        <TextBox
+        Grid.Column="0"
+        Grid.Row="6"
+        Grid.ColumnSpan="4"
+        Background="DeepPink"
+        Name="SentenceTbl"
+        Foreground="AntiqueWhite"
+        Text="Результат"
         FontSize="24"
-         Background="HotPink"
-         Foreground="AntiqueWhite"
-            Click="Button_Click_2"
-            />
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center"
+        Height="62"
+        Width="533"/>
+
+
+
         <Button
-        Grid.Column="2"
-         Grid.Row="1" 
-         Content="2"
-         FontSize="24"
-         Background="HotPink"
-         Foreground="AntiqueWhite"
-           />
-        <Button
-         Grid.Column="3"
-         Grid.Row="1" 
-        Content="+"
+        Grid.Column="0"
+        Grid.Row="1"
+        Content="0"
         FontSize="24"
         Background="HotPink"
         Foreground="AntiqueWhite"
-            Click="Button_Click_3"
-            />
+        Click="NumberButton_Click"/>
+
+        <Button
+        Grid.Column="1"
+        Grid.Row="1"
+        Content="1"
+        FontSize="24"
+        Background="HotPink"
+        Foreground="AntiqueWhite"
+        Click="NumberButton_Click"/>
+
+        <Button
+        Grid.Column="2"
+        Grid.Row="1"
+        Content="2"
+        FontSize="24"
+        Background="HotPink"
+        Foreground="AntiqueWhite"
+        Click="NumberButton_Click"/>
+
         <Button
         Grid.Column="0"
-        Grid.Row="2" 
+        Grid.Row="2"
         Content="3"
         FontSize="24"
         Background="HotPink"
         Foreground="AntiqueWhite"
-            Click="Button_Click_4"
-           />
-        <Button
-   Grid.Column="1"
-    Grid.Row="2" 
-    Content="4"
-    FontSize="24"
-    Background="HotPink"
-    Foreground="AntiqueWhite"
-            Click="Button_Click_5"
-            />
-        <Button
-   Grid.Column="2"
-    Grid.Row="2" 
-    Content="5"
-    FontSize="24"
-    Background="HotPink"
-    Foreground="AntiqueWhite"
-            Click="Button_Click_6"
-           />
-        <Button
-   Grid.Column="3"
-    Grid.Row="2" 
-    Content="-"
-    FontSize="24"
-    Background="HotPink"
-    Foreground="AntiqueWhite"
-            Click="Button_Click_7"
-           />
-        <Button
-   Grid.Column="0"
-    Grid.Row="3" 
-    Content="6"
-    FontSize="24"
-    Background="HotPink"
-    Foreground="AntiqueWhite"
-            Click="Button_Click_8"/>
+        Click="NumberButton_Click"/>
 
         <Button
-   Grid.Column="1"
-    Grid.Row="3" 
-    Content="7"
-    FontSize="24"
-    Background="HotPink"
-    Foreground="AntiqueWhite"
-            Click="Button_Click_9"
-           />
+        Grid.Column="1"
+        Grid.Row="2"
+        Content="4"
+        FontSize="24"
+        Background="HotPink"
+        Foreground="AntiqueWhite"
+        Click="NumberButton_Click"/>
+
         <Button
-   Grid.Column="2"
-    Grid.Row="3" 
-    Content="8"
-    FontSize="24"
-    Background="HotPink"
-    Foreground="AntiqueWhite"
-           
-            Click="Button_Click_10"/>
+        Grid.Column="2"
+        Grid.Row="2"
+        Content="5"
+        FontSize="24"
+        Background="HotPink"
+        Foreground="AntiqueWhite"
+        Click="NumberButton_Click"/>
+
         <Button
-   Grid.Column="3"
-    Grid.Row="3" 
-    Content="*"
-    FontSize="24"
-    Background="HotPink"
-    Foreground="AntiqueWhite"
-            Click="Button_Click_11"
-           />
+        Grid.Column="0"
+        Grid.Row="3"
+        Content="6"
+        FontSize="24"
+        Background="HotPink"
+        Foreground="AntiqueWhite"
+        Click="NumberButton_Click"/>
+
         <Button
-   Grid.Column="0"
-    Grid.Row="4" 
-    Content="9"
-    FontSize="24"
-    Background="HotPink"
-    Foreground="AntiqueWhite"
-            Click="Button_Click_12"
-            />
+        Grid.Column="1"
+        Grid.Row="3"
+        Content="7"
+        FontSize="24"
+        Background="HotPink"
+        Foreground="AntiqueWhite"
+        Click="NumberButton_Click"/>
+
         <Button
-   Grid.Column="1"
-    Grid.Row="4" 
-    Content="C"
-    FontSize="24"
-    Background="HotPink"
-    Foreground="AntiqueWhite"
-            Click="Button_Click_13"
-           />
+        Grid.Column="2"
+        Grid.Row="3"
+        Content="8"
+        FontSize="24"
+        Background="HotPink"
+        Foreground="AntiqueWhite"
+        Click="NumberButton_Click"/>
+
         <Button
-   Grid.Column="2"
-    Grid.Row="4" 
-    Content="="
-    FontSize="24"
-    Background="HotPink"
-    Foreground="AntiqueWhite"
-            Click="Button_Click_14"
-         />
+        Grid.Column="0"
+        Grid.Row="4"
+        Content="9"
+        FontSize="24"
+        Background="HotPink"
+        Foreground="AntiqueWhite"
+        Click="NumberButton_Click"/>
+
+
         <Button
-   Grid.Column="3"
-    Grid.Row="4" 
-    Content="/"
-    FontSize="24"
-    Background="HotPink"
-    Foreground="AntiqueWhite"
-            Click="Button_Click_15"
-            />
+        Grid.Column="3"
+        Grid.Row="1"
+        Content="+"
+        FontSize="24"
+        Background="HotPink"
+        Foreground="AntiqueWhite"
+        Click="OperationButton_Click"/>
+
+        <Button
+        Grid.Column="3"
+        Grid.Row="2"
+        Content="-"
+        FontSize="24"
+        Background="HotPink"
+        Foreground="AntiqueWhite"
+        Click="OperationButton_Click"/>
+
+        <Button
+        Grid.Column="3"
+        Grid.Row="3"
+        Content="*"
+        FontSize="24"
+        Background="HotPink"
+        Foreground="AntiqueWhite"
+        Click="OperationButton_Click"/>
+
+        <Button
+        Grid.Column="3"
+        Grid.Row="4"
+        Content="/"
+        FontSize="24"
+        Background="HotPink"
+        Foreground="AntiqueWhite"
+        Click="OperationButton_Click"/>
+
+        <Button
+        Grid.Column="1"
+        Grid.Row="4"
+        Content="C"
+        FontSize="24"
+        Background="HotPink"
+        Foreground="AntiqueWhite"
+        Click="ClearButton_Click"/>
+
+        <Button
+        Grid.Column="2"
+        Grid.Row="4"
+        Content="="
+        FontSize="24"
+        Background="HotPink"
+        Foreground="AntiqueWhite"
+        Click="EqualsButton_Click"/>
     </Grid>
 </Window>

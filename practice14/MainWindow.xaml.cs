@@ -18,91 +18,135 @@ namespace practice14
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
-    {
-        public MainWindow()
+        public partial class MainWindow : Window
         {
-            InitializeComponent();
-        }
+            private double firstNumber = 0;
+            private string operation = "";
+            private bool isNewInput = true;
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+            public MainWindow()
+            {
+                InitializeComponent();
+            }
+
+        //обработчик для кнопок с цифрами
+        private void NumberButton_Click(object sender, RoutedEventArgs e)//sender возвращает свойства и состояния, а е возвращает события
         {
-            
-        }
+                Button button = (Button)sender;//дословно уверена что это будет в этом случае кнопка
+            string number = button.Content.ToString();//получаем то что написано в кнопке
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+            if (isNewInput)
+                {
+                    SentenceTb.Text = number;
+                    isNewInput = false;
+                }
+                else
+                {
+                    SentenceTb.Text += number;
+                }
+            }
+        //обработчик для кнопок операций
+        private void OperationButton_Click(object sender, RoutedEventArgs e)//обработчик нажатия на кнопку с точкой
         {
+                Button button = (Button)sender;//наша кнопка на которую мы нажали
+            string newOperation = button.Content.ToString();
+            //если уже запомненная операция и не новый ввод, вычисляем промежуточный результат
+            if (!string.IsNullOrEmpty(operation) && !isNewInput)
+                {
+                    double currentNumber;//хранит 2-е число, которое мы введем
+                if (double.TryParse(SentenceTb.Text, out currentNumber))
+                    {
+                        switch (operation)
+                        {
+                            case "+":
+                                firstNumber += currentNumber;
+                                break;
 
-        }
+                            case "-":
+                                firstNumber -= currentNumber;
+                                break;
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
+                            case "*":
+                                firstNumber *= currentNumber;
+                                break;
 
-        }
+                            case "/":
+                                if (currentNumber != 0)
+                                    firstNumber /= currentNumber;
+                                else
+                                    SentenceTb.Text = "Ошибка";
+                                break;
+                        }
+                    }
+                }
+                else
+                {
+                //если это 1-я операция, просто запоминаем текущее число
+                double.TryParse(SentenceTb.Text, out firstNumber);
+                }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
+                operation = newOperation;
+                isNewInput = true;
+            }
 
-        }
+            // =
+            private void EqualsButton_Click(object sender, RoutedEventArgs e)
+            {
+                if (string.IsNullOrEmpty(operation))
+                    return;
 
-        private void Button_Click_4(object sender, RoutedEventArgs e)
-        {
+                if (!double.TryParse(SentenceTb.Text, out double secondNumber))//проверяем, что мы не можем добавить число 
+            {
+                    SentenceTb.Text = "ОШИБКА";
+                    return;
+                }
 
-        }
+                double result = 0;
+                bool hasError = false;
 
-        private void Button_Click_5(object sender, RoutedEventArgs e)
-        {
+                switch (operation)
+                {
+                    case "+":
+                        result = firstNumber + secondNumber;// firstNumber хранит результат, но не выводит его, а result выводит сохраненный результат в texBox 120
+                    break;
 
-        }
+                    case "-":
+                        result = firstNumber - secondNumber;
+                        break;
 
-        private void Button_Click_6(object sender, RoutedEventArgs e)
-        {
+                    case "*":
+                        result = firstNumber * secondNumber;
+                        break;
 
-        }
+                    case "/":
+                        if (secondNumber != 0)
+                            result = firstNumber / secondNumber;
+                        else
+                        {
+                            SentenceTb.Text = "Ошибка";
+                            hasError = true;
+                        }
+                        break;
+                }
 
-        private void Button_Click_7(object sender, RoutedEventArgs e)
-        {
+                if (!hasError)
+                {
+                    SentenceTb.Text = result.ToString();
+                    SentenceTbl.Text = result.ToString();
+                }
 
-        }
+                operation = "";
+                isNewInput = true;
+            }
+            private void ClearButton_Click(object sender, RoutedEventArgs e)
+            {
+                SentenceTb.Text = "";
+                SentenceTbl.Text = "Результат";
 
-        private void Button_Click_8(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_9(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_10(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_11(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_12(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_13(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_14(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_15(object sender, RoutedEventArgs e)
-        {
-
+                firstNumber = 0;
+                operation = "";
+                isNewInput = true;
+            }
         }
     }
-}
+
